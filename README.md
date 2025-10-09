@@ -3,9 +3,9 @@
 ## Environment Settings
 The code has been tested with
 
-- python 3.9
-- torch 1.12
-- cuda 11.3
+- python 3.10
+- torch 2.5
+- cuda 12.1
 
 Some dependencies:
 ```
