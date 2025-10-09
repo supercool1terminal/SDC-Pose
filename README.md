@@ -4,7 +4,7 @@
 The code has been tested with
 
 - python 3.10
-- torch 2.5
+- torch 2.5.0
 - cuda 12.1
 
 Some dependencies:
