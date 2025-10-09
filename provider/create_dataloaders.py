@@ -49,20 +49,6 @@ def create_dataloaders(cfg):
             pin_memory=cfg.pin_memory)
             
         data_loader['syn'] = syn_dataloader
-    
-    elif cfg.dataset_name == "housecat6d":
-        real_dataset = HouseCat6DTrainingDataset(
-            cfg.image_size, cfg.sample_num, data_dir, cfg.seq_length, cfg.img_length)
-        
-        real_dataloader = torch.utils.data.DataLoader(real_dataset,
-            batch_size=cfg.batchsize,
-            num_workers=int(cfg.num_workers),
-            shuffle=cfg.shuffle,
-            sampler=None,
-            drop_last=cfg.drop_last,
-            pin_memory=cfg.pin_memory)
-        
-        data_loader['real'] = real_dataloader
         
     else:
         raise NotImplementedError
