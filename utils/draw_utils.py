@@ -28,7 +28,7 @@ def euler_to_rotation_matrix(roll, pitch, yaw):
                    [np.sin(yaw), np.cos(yaw), 0],
                    [0, 0, 1]])
 
-    # 先绕Z轴，再绕Y轴，最后绕X轴
+    # Z，Y，X
     rotation_matrix = np.dot(R_z, np.dot(R_y, R_x))
 
     return rotation_matrix
