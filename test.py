@@ -6,9 +6,7 @@ import random
 
 import torch
 import gorilla
-# import pickle
-# import glob
-# from plot_mAP import plot_mAP
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(BASE_DIR, 'provider'))
