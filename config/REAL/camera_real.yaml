@@ -6,7 +6,7 @@ train_dataset:
   num_mini_batch_per_epoch: 4000
   image_size: 224       # [192, 224]
   sample_num: 1024
-  outlier_th: 0.1  #!!!!
+  outlier_th: 0.1  
   syn_bs: 30
   real_bs: 10
   syn_num_workers: 12
