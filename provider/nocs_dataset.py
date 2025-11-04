@@ -1,6 +1,6 @@
-import glob #Finds a wildcard for the file path
-import math #Provides mathematical operation functions
-import os  #Operating system related path operations
+import glob 
+import math
+import os  
 
 import _pickle as cPickle  
 import pickle
