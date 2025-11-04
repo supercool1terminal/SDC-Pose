@@ -52,28 +52,20 @@ if __name__ == "__main__":
     torch.manual_seed(cfg.rd_seed)
     torch.cuda.manual_seed(cfg.rd_seed)
     torch.cuda.manual_seed_all(cfg.rd_seed)
+
+    # model
     logger.info("=> creating model ...")
     model = Net(cfg.pose_net)
+    
     start_epoch = 1
     start_iter = 0
-
-    # 加载检查点
-    checkpoint_path = os.path.join(cfg.ckpt_dir, 'epoch_100.pt')
-
-    if os.path.exists(checkpoint_path):
-        checkpoint = torch.load(checkpoint_path)
-        model.load_state_dict(checkpoint)
-        start_epoch =2
-        logger.info(f"Loaded checkpoint from {checkpoint_path}, starting from epoch {start_epoch}")
-    else:
-        logger.warning(f"No checkpoint found at {checkpoint_path}, starting from scratch")
 
     model = model.cuda()
     count_parameters = sum(gorilla.parameter_count(model).values())
     logger.warning("#Total parameters : {}".format(count_parameters))
     loss = Loss(cfg.loss).cuda()
 
-    # 数据加载器
+    # dataloader
     dataloaders = create_dataloaders(cfg.train_dataset)
     for k in dataloaders.keys():
         dataloaders[k].dataset.reset()
