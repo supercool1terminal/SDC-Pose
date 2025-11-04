@@ -10,7 +10,7 @@ from tqdm import tqdm
 
 
 class Solver(
-    gorilla.solver.BaseSolver):  # extends from gorilla.solver.BaseSolver, and implement the train and eval methods process
+    gorilla.solver.BaseSolver):  
     def __init__(self, model, loss, dataloaders, logger, cfg, start_epoch=1, start_iter=0):
         super(Solver, self).__init__(
             model=model,
@@ -23,7 +23,7 @@ class Solver(
         self.logger.propagate = 0
         tb_writer_ = tools_writer(
             dir_project=cfg.log_dir, num_counter=2, get_sum=False)
-        tb_writer_.writer = self.tb_writer  # record train process generate by tensorboard
+        tb_writer_.writer = self.tb_writer  
         self.tb_writer = tb_writer_
 
         self.per_val = cfg.per_val
@@ -81,7 +81,7 @@ class Solver(
         if self.dataset_name == "camera_real":
             data_iter = zip(self.dataloaders["syn"], self.dataloaders["real"])
             iter_lenth = len(self.dataloaders["syn"])
-        elif self.dataset_name == "camera":  # Specify the data set to use when training
+        elif self.dataset_name == "camera":  
             data_iter = self.dataloaders["syn"]
             iter_lenth = len(self.dataloaders["syn"])
         else:
@@ -124,7 +124,7 @@ class Solver(
                 self.write_summary(self.log_buffer._output, mode)
             end = time.time()
 
-            if self.lr_scheduler is not None:  # if exist learn rate scheduler, update learn rate after each epoch iteration
+            if self.lr_scheduler is not None: 
                 self.lr_scheduler.step()
             self.iter += 1
             i += 1
@@ -189,7 +189,7 @@ class Solver(
                 real_data[key] = end_points[key]
 
         loss_dict_syn = self.loss(
-            syn_data)  # Separate the synthetic and real dataset losses, and pass the entire synthetic label into the LOSS class
+            syn_data)  
         loss_dict_real = self.loss(real_data)
 
         dict_info = {}
@@ -256,7 +256,7 @@ class Solver(
             assert False
 
 
-def test_func(model, dataloder, save_path):  # test model above evaluate dataset performance
+def test_func(model, dataloder, save_path):  
     model.eval()
     time_all = 0
     with tqdm(total=len(dataloder)) as t:
@@ -325,7 +325,7 @@ def test_func(model, dataloder, save_path):  # test model above evaluate dataset
     print(f"time_all: {time_all}")
 
 
-class tools_writer():  # viewable monitor the training process
+class tools_writer():  
     def __init__(self, dir_project, num_counter, get_sum):
         if not os.path.isdir(dir_project):
             os.makedirs(dir_project)
