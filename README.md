@@ -1,5 +1,4 @@
-# KA-Pose
-![image](./fig1.png)
+# SDC-Pose:
 ## Environment Settings
 The code has been tested with
 
