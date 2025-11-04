@@ -25,7 +25,7 @@ test_dataset:
 pose_net:
   rgb_backbone: resnet    # [resnet, dino]
   cat_num: 6
-  IAKD:
+  KCGK:
     kpt_num: 100
     query_dim: 256
     AttnLayer:
@@ -33,7 +33,7 @@ pose_net:
       d_model: 256
       dim_ffn: 256
       num_head: 4
-  GAFA:
+  GDPA:
     block_num: 2
     K: [8, 16]
     d_model: 256
