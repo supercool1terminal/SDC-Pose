@@ -67,7 +67,6 @@ Our implementation leverages the code from these works:
 - [NOCS](https://github.com/hughw19/NOCS_CVPR2019)
 - [SPD](https://github.com/mentian/object-deformnet)
 - [DPDN](https://github.com/JiehongLin/Self-DPDN)
-- [VI-Net](https://github.com/JiehongLin/VI-Net)
 - [AG-Pose](https://github.com/Leeiieeo/AG-Pose)
 
 We appreciate their generous sharing.
