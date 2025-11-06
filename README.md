@@ -1,4 +1,4 @@
-# SDC-Pose:
+# SDC-Pose: Score-Distance Guided Point Cloud Filtering and Clustered Sparse Keypoints for Category-Level 6D Object Pose Estimation
 ## Environment Settings
 The code has been tested with
 
