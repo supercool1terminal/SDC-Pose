@@ -60,3 +60,15 @@ python visualize.py --config config/REAL/camera_real.yaml --test_epoch 30
 ![image](./box.png)
 
 ![image](./result.png)
+
+
+## Acknowledgements
+Our implementation leverages the code from these works:
+- [NOCS](https://github.com/hughw19/NOCS_CVPR2019)
+- [SPD](https://github.com/mentian/object-deformnet)
+- [DualPoseNet](https://github.com/Gorilla-Lab-SCUT/DualPoseNet)
+- [DPDN](https://github.com/JiehongLin/Self-DPDN)
+- [VI-Net](https://github.com/JiehongLin/VI-Net)
+- [AG-Pose](https://github.com/Leeiieeo/AG-Pose)
+
+We appreciate their generous sharing.
